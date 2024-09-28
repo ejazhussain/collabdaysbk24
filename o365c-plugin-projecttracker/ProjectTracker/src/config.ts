@@ -3,7 +3,7 @@ const config = {
   MicrosoftAppType: process.env.BOT_TYPE,
   MicrosoftAppTenantId: process.env.BOT_TENANT_ID,
   MicrosoftAppPassword: process.env.BOT_PASSWORD,
-  functionAppUrl: "https://functionapp-projecttracker.azurewebsites.net/api/ProjectManagement?code=V-4FN7WZdsIIQxZqziAQiTIHfWlH-qIwLWeecALdPsttAzFukCngvw%3D%3D"
+  functionAppUrl: process.env.FUNCTION_ENDPOINT,
 };
 
 export default config;
