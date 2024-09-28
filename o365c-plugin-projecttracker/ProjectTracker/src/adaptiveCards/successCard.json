@@ -1,0 +1,98 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.4",
+    "body": [{
+            "type": "Container",
+            "style": "good",
+            "separator": true,
+            "items": [{
+                "type": "TextBlock",
+                "text": "${message}",
+                "weight": "Bolder",
+                "size": "Medium"
+            }]
+        },
+        {
+            "type": "ColumnSet",
+            "columns": [{
+                    "type": "Column",
+                    "items": [{
+                            "type": "TextBlock",
+                            "text": "Title",
+                            "weight": "Bolder",
+                            "color": "Accent"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "${taskName}",
+                            "wrap": true
+                        }
+                    ],
+                    "width": "stretch"
+                },
+                {
+                    "type": "Column",
+                    "items": [{
+                            "type": "TextBlock",
+                            "text": "Task Status:",
+                            "weight": "Bolder",
+                            "color": "Accent"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "${taskStatus}",
+                            "wrap": true
+                        }
+                    ],
+                    "width": "stretch"
+                }
+            ],
+            "separator": true
+        },
+        {
+            "type": "TextBlock",
+            "text": "Project Name:",
+            "weight": "Bolder",
+            "color": "Good"
+        },
+        {
+            "type": "TextBlock",
+            "text": "${projectName}",
+            "wrap": true
+        },
+        {
+            "type": "TextBlock",
+            "text": "Description:",
+            "weight": "Bolder",
+            "color": "Good"
+        },
+        {
+            "type": "TextBlock",
+            "text": "${description}",
+            "wrap": true
+        },
+        {
+            "type": "TextBlock",
+            "text": "Due Date:",
+            "weight": "Bolder",
+            "color": "Good"
+        },
+        {
+            "type": "TextBlock",
+            "text": "${dueDate}",
+            "wrap": true
+        },
+        {
+            "type": "TextBlock",
+            "text": "Email:",
+            "weight": "Bolder",
+            "color": "Good"
+        },
+        {
+            "type": "TextBlock",
+            "text": "${email}",
+            "wrap": true
+        }
+    ]
+}

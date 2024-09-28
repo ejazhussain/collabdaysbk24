@@ -1,0 +1,10 @@
+{
+    "projectID": 3,
+    "projectName": "App Development",
+    "description": "Develop a new mobile app",
+    "startDate": "2024-03-01T00:00:00",
+    "endDate": "2024-09-30T00:00:00",
+    "projectManager": "Anna Gold",
+    "email": "anna.gold@example.com",
+    "projectStatus": "In Progress"
+}

@@ -1,0 +1,94 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.4",
+    "body": [{
+            "type": "TextBlock",
+            "text": "Project Details",
+            "weight": "Bolder",
+            "size": "Large",
+            "separator": true
+        },
+        {
+            "type": "ColumnSet",
+            "columns": [{
+                    "type": "Column",
+                    "items": [{
+                            "type": "TextBlock",
+                            "text": "Title",
+                            "weight": "Bolder",
+                            "color": "Accent"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "${name}",
+                            "wrap": true
+                        }
+                    ],
+                    "width": "stretch"
+                },
+                {
+                    "type": "Column",
+                    "items": [{
+                            "type": "TextBlock",
+                            "text": "Project Status:",
+                            "weight": "Bolder",
+                            "color": "Accent"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "${status}",
+                            "wrap": true
+                        }
+                    ],
+                    "width": "stretch"
+                }
+            ],
+            "separator": true
+        },
+        {
+            "type": "TextBlock",
+            "text": "Description",
+            "weight": "Bolder",
+            "color": "Good"
+        },
+        {
+            "type": "TextBlock",
+            "text": "${description}",
+            "wrap": true
+        },
+        {
+            "type": "TextBlock",
+            "text": "Start Date:",
+            "weight": "Bolder",
+            "color": "Good"
+        },
+        {
+            "type": "TextBlock",
+            "text": "${startDate}",
+            "wrap": true
+        },
+        {
+            "type": "TextBlock",
+            "text": "End Date:",
+            "weight": "Bolder",
+            "color": "Good"
+        },
+        {
+            "type": "TextBlock",
+            "text": "${endDate}",
+            "wrap": true
+        },
+        {
+            "type": "TextBlock",
+            "text": "Manager",
+            "weight": "Bolder",
+            "color": "Good"
+        },
+        {
+            "type": "TextBlock",
+            "text": "${manager}",
+            "wrap": true
+        }
+    ]
+}

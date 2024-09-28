@@ -1,0 +1,153 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.4",
+    "body": [{
+            "type": "TextBlock",
+            "text": "Task Details",
+            "weight": "Bolder",
+            "size": "Large",
+            "separator": true
+        },
+        {
+            "type": "ColumnSet",
+            "columns": [{
+                    "type": "Column",
+                    "items": [{
+                            "type": "TextBlock",
+                            "text": "Title",
+                            "weight": "Bolder",
+                            "color": "Accent"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "${taskName}",
+                            "wrap": true
+                        }
+                    ],
+                    "width": "stretch"
+                },
+                {
+                    "type": "Column",
+                    "items": [{
+                            "type": "TextBlock",
+                            "text": "Task Status:",
+                            "weight": "Bolder",
+                            "color": "Accent"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "${taskStatus}",
+                            "wrap": true
+                        }
+                    ],
+                    "width": "stretch"
+                }
+            ],
+            "separator": true
+        },
+        {
+            "type": "TextBlock",
+            "text": "Project Name:",
+            "weight": "Bolder",
+            "color": "Good"
+        },
+        {
+            "type": "TextBlock",
+            "text": "${projectName}",
+            "wrap": true
+        },
+        {
+            "type": "TextBlock",
+            "text": "Description:",
+            "weight": "Bolder",
+            "color": "Good"
+        },
+        {
+            "type": "TextBlock",
+            "text": "${description}",
+            "wrap": true
+        },
+        {
+            "type": "TextBlock",
+            "text": "Due Date:",
+            "weight": "Bolder",
+            "color": "Good"
+        },
+        {
+            "type": "TextBlock",
+            "text": "${dueDate}",
+            "wrap": true
+        },
+        {
+            "type": "TextBlock",
+            "text": "Email:",
+            "weight": "Bolder",
+            "color": "Good"
+        },
+        {
+            "type": "TextBlock",
+            "text": "${email}",
+            "wrap": true
+        },
+        {
+            "type": "Container",
+            "items": [{
+                "type": "ActionSet",
+                "actions": [{
+                    "type": "Action.ShowCard",
+                    "title": "Take action",
+                    "card": {
+                        "type": "AdaptiveCard",
+                        "body": [{
+                            "type": "Input.ChoiceSet",
+                            "id": "choiceTaskStatus",
+                            "label": "Task Status",
+                            "value": "${taskStatus}",
+                            "choices": [{
+                                    "title": "In Progress",
+                                    "value": "In Progress"
+                                },
+                                {
+                                    "title": "Completed",
+                                    "value": "Completed"
+                                },
+                                {
+                                    "title": "Not Started",
+                                    "value": "Not Started"
+                                },
+                                {
+                                    "title": "On Hold",
+                                    "value": "On Hold"
+                                },
+                                {
+                                    "title": "Cancelled",
+                                    "value": "Cancelled"
+                                }
+                            ],
+                            "style": "compact",
+                            "errorMessage": "Please select a valid task status"
+                        }],
+                        "actions": [{
+                                "type": "Action.Execute",
+                                "title": "Submit ✅",
+                                "verb": "ok",
+                                "data": {
+                                    "taskId": "${taskId}"
+                                }
+                            },
+                            {
+                                "type": "Action.Execute",
+                                "title": "Cancel ❌",
+                                "verb": "cancel",
+                                "data": {
+                                    "taskId": "${taskId}"
+                                }
+                            }
+                        ]
+                    }
+                }]
+            }]
+        }
+    ]
+}

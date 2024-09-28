@@ -1,0 +1,75 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/teams/vDevPreview/MicrosoftTeams.schema.json",
+    "manifestVersion": "devPreview",
+    "version": "1.0.0",
+    "id": "${{TEAMS_APP_ID}}",
+    "developer": {
+        "name": "Teams App, Inc.",
+        "websiteUrl": "https://www.example.com",
+        "privacyUrl": "https://www.example.com/privacy",
+        "termsOfUseUrl": "https://www.example.com/termofuse"
+    },
+    "icons": {
+        "color": "color.png",
+        "outline": "outline.png"
+    },
+    "name": {
+        "short": "[O365C] Project Tracker",
+        "full": "[O365C] Project Tracker Copilot"
+    },
+    "description": {
+        "short": "Manage projects and tasks directly within Teams.",
+        "full": "Project Tracker Copilot is a comprehensive Copilot plugin that helps users manage projects, tasks, and status updates directly within Microsoft Teams. \n\nWith backend support through Azure Functions and SQL, it enables users to retrieve project information, update tasks, and get real-time status updates using various methods. The tool simplifies project management, providing real-time access to essential data while ensuring easy collaboration within the Teams environment. For example, A user can ask questions like \n\nShow me all projects where status is 'In Progress' \n\nshow me all tasks from the project name Website Redesign. \n\nShow me detail for task with Id 5"
+
+    },
+    "accentColor": "#FFFFFF",
+    "bots": [],
+    "composeExtensions": [{
+        "botId": "${{BOT_ID}}",
+        "commands": [{
+            "id": "projectSearch",
+            "description": "Search for projects and tasks using natural language. E.g., 'Show me all projects with project status In Progress'.",
+            "title": "Project search",
+            "context": [
+                "commandBox",
+                "compose",
+                "message"
+            ],
+            "type": "query",
+            "initialRun": false,
+            "fetchTask": false,
+            "semanticDescription": "This command is used to search for projects and tasks using natural language and keywords. Users can enter a query in the command box to retrieve information about projects and tasks that match the search criteria. For example, 'Show me all projects where status is 'In Progress' or 'Show me all tasks from the project name Website Redesign' or 'Show me detail for task with Id 5'.",
+            "parameters": [{
+                "name": "getProjectStatus",
+                "title": "Project Status",
+                "description": "Search for projects by their status (e.g., In Progress, Completed)",
+                "semanticDescription": "Search for projects by their current status (e.g., In Progress, Completed). For example, 'Get all projects where the Project status is In Progress' or 'Show me all projects where status is 'Completed'",
+                "inputType": "text"
+            }, {
+                "name": "getProjectTasks",
+                "title": "Project Tasks",
+                "description": "Retrieve tasks for a specific project by entering the project name",
+                "semanticDescription": "Retrieve tasks for a specific project by entering the project name. For example, 'Show me all tasks for project called 'Website Redesign' or get tasks for project 'Website Redesign'",
+                "inputType": "text"
+            }, {
+                "name": "getProjectTaskDetail",
+                "title": "Project Task Detail",
+                "description": "Retrieve details for a specific task by entering the task Id",
+                "semanticDescription": "Retrieve details for a specific task by entering the task Id. for example, 'Show me detail for task with Id 1234' or get task information for task Id 1234",
+                "inputType": "text"
+            }, {
+                "name": "updateTaskStatus",
+                "title": "Update Task Status",
+                "semanticDescription": "Update the status of a specific task by entering the task Id and the new status. e.g. 'TaskId: 1234, Status: In Progress'",
+                "inputType": "text"
+            }]
+        }]
+    }],
+    "configurableTabs": [],
+    "staticTabs": [],
+    "permissions": [
+        "identity",
+        "messageTeamMembers"
+    ],
+    "validDomains": []
+}
